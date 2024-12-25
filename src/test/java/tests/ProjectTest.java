@@ -30,7 +30,10 @@ public class ProjectTest extends BaseTest {
 
         caseModal.createCase();
         caseModal.clickSaveButton();
-        caseModal.waitTillOpened();
+        caseModal.isCaseCreated();
+
+        projectsPage.openPage();
+        projectsPage.removeProject("Test Project");
     }
 }
 

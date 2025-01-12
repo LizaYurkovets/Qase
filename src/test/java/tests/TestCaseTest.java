@@ -17,18 +17,6 @@ public class TestCaseTest extends BaseTest {
             .automationStatus("Automated")
             .build();
 
-    Case case2 = Case.builder()
-            .title("Test Case")
-            .status("Actual")
-            .suite("Test cases without suite")
-            .severity("Major")
-            .priority("Low")
-            .type("Smoke")
-            .layer("API")
-            .isFlaky("Yes")
-            .behavior("Positive")
-            .automationStatus("Automated")
-            .build();
 
 
     @Test
@@ -40,7 +28,7 @@ public class TestCaseTest extends BaseTest {
         projectsPage.openProject();
         projectsPage.isProjectOpened();
         projectPage.clickCreateCase();
-        caseModal.createCase(case2);
+        caseModal.createCase(case1);
         caseModal.clickSaveButton();
         caseModal.isCaseCreated();
         caseModal.clickEdit();

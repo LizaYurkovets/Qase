@@ -8,7 +8,8 @@ import lombok.Data;
 public class Project {
     private final String projectName;
     private final String projectCode;
-    private final String description;
+    @Builder.Default
+    private final String description = "";
     private final String projectAccessType;
     private final String memberAccess;
 }

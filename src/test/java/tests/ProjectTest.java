@@ -17,19 +17,6 @@ public class ProjectTest extends BaseTest {
             .memberAccess("none")
             .build();
 
-    Case case1 = Case.builder()
-            .title("My Case")
-            .status("Draft")
-            .suite("Test cases without suite")
-            .severity("Major")
-            .priority("Low")
-            .type("Smoke")
-            .layer("API")
-            .isFlaky("Yes")
-            .behavior("Positive")
-            .automationStatus("Automated")
-            .build();
-
     @Test
     public void checkCreateProject() {
         loginPage.openPage();

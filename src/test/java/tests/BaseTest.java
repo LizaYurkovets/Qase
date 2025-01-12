@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
-import utils.PropertyReader;
 
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 

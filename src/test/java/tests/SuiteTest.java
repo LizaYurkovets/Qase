@@ -24,7 +24,7 @@ public class SuiteTest extends BaseTest {
             .build();
 
     @Test
-    public void checkCreateSuiteWithTestCases() {
+    public void checkCreateSuiteWithTestCases() throws InterruptedException {
         loginPage.openPage();
         loginPage.login("lizayurkovets@gmail.com", "Lliza1997$$$");
         projectsPage.openPage();

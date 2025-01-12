@@ -20,7 +20,7 @@ public class TestCaseTest extends BaseTest {
 
 
     @Test
-    public void checkEditCase() {
+    public void checkEditCase() throws InterruptedException {
         loginPage.openPage();
         loginPage.login("lizayurkovets@gmail.com", "Lliza1997$$$");
         projectsPage.openPage();
@@ -37,7 +37,7 @@ public class TestCaseTest extends BaseTest {
     }
 
     @Test
-    public void checkRemoveCase() {
+    public void checkRemoveCase() throws InterruptedException {
         loginPage.openPage();
         loginPage.login("lizayurkovets@gmail.com", "Lliza1997$$$");
         projectsPage.openPage();

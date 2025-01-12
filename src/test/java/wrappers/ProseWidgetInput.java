@@ -26,7 +26,9 @@ public class ProseWidgetInput {
     //    //div[@class='case-create-block steps-block']/following-sibling::*[1]/div/div[1]//span[@class='placeholder ProseMirror-widget'][text()='Step Action']/ancestor::div[@class='ProseMirror toastui-editor-contents']
     public void write(String text) throws InterruptedException {
         var element = getElement();
+        Thread.sleep(5000);
         element.shouldBe(Condition.exist);
+        Thread.sleep(5000);
         element.$x("p").append(text);
     }
 

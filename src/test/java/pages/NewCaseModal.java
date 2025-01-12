@@ -6,6 +6,7 @@ import dto.Case;
 import lombok.extern.log4j.Log4j2;
 import wrappers.Dropdown;
 import wrappers.Input;
+import wrappers.ProseWidgetInput;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -23,7 +24,7 @@ public class NewCaseModal {
             MESSAGE_DELETE = $x("//span[contains(text(), 'was successfully deleted')]"),
             EDIT_BUTTON = $x("//span[contains(text(), ' Edit')]");
 
-    public void createCase(Case case1) {
+    public void createCase(Case case1) throws InterruptedException {
         log.info("Creating case '{}', ", case1.getTitle());
         new Input("title").write(case1.getTitle());
         new Dropdown("Status").select(case1.getStatus());
@@ -35,8 +36,8 @@ public class NewCaseModal {
         new Dropdown("Is flaky").select(case1.getIsFlaky());
         new Dropdown("Behavior").select(case1.getBehavior());
         new Dropdown("Automation status").select(case1.getAutomationStatus());
-/*        clickAddButton();
-        new ProseWidgetInput(getCaseStepXpath(1)).write("test");*/
+        clickAddButton();
+        new ProseWidgetInput(getCaseStepXpath(1), "Step Action").write("test");
     }
 
     public void clickSaveButton() {

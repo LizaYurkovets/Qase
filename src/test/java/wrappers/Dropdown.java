@@ -2,9 +2,11 @@ package wrappers;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import lombok.extern.log4j.Log4j2;
 
 import static com.codeborne.selenide.Selenide.$x;
 
+@Log4j2
 public class Dropdown {
     String name;
 
@@ -13,9 +15,9 @@ public class Dropdown {
     }
 
     public void select(String value) {
+        log.info("Selecting '{}'", value);
         getDropdown().click();
-
-        var dropdownOptions = $x("//div[@role='listbox']");
+        SelenideElement dropdownOptions = $x("//div[@role='listbox']");
         dropdownOptions.shouldBe(Condition.visible);
         dropdownOptions.$x(String.format("div[text()='%s']", value)).click();
     }

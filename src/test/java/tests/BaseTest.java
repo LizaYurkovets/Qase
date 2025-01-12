@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.*;
+import utils.PropertyReader;
 
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
@@ -18,6 +19,13 @@ public class BaseTest {
     NewProjectModal projectModal;
     ProjectPage projectPage;
     NewCaseModal caseModal;
+    NewSuiteModal suiteModal;
+    EditCasePage editCase;
+    NewSuiteModal suite;
+
+    /*String user = System.getProperty("user", PropertyReader.getProperty("user"));
+    String password = System.getProperty("password", PropertyReader.getProperty("password"));*/
+
 
     @BeforeMethod
     public void setUp() {
@@ -34,6 +42,9 @@ public class BaseTest {
         projectModal = new NewProjectModal();
         projectPage = new ProjectPage();
         caseModal = new NewCaseModal();
+        suiteModal = new NewSuiteModal();
+        editCase = new EditCasePage();
+        suite = new NewSuiteModal();
 
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
                 .screenshots(true)
